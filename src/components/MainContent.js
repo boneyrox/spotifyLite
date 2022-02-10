@@ -5,14 +5,13 @@ import RecentlyPlayed from './RecentlyPlayed'
 import Cookies from 'js-cookie'
 import NewRelease from './NewRelease';
 
-const MainContent = ({ data, token }) => {
+const MainContent = ({ data, token, resetToken }) => {
     const [dropDown, setDropDown] = React.useState(false);
     const defaultAvatar = 'https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png'
 
     const handleLogout = () => {
         // remove cookie and get new token
-        Cookies.remove('spotifyAuthToken');
-        window.location.reload();
+        resetToken()
     }
 
     // console.log(data.images[0].url);
@@ -32,7 +31,7 @@ const MainContent = ({ data, token }) => {
                 {/*drop down  */}
                 {dropDown && <div class="origin-top-right absolute md:right-4 right-6 mt-12 md:mt-14 md:w-44 w-36  right-8 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
                     <div class="py-1" role="none">
-                        <div class="text-gray-700 block px-4 py-2 text-sm" onClick={handleLogout}>Logout</div>
+                        <div class="text-gray-700 block px-4 py-2 text-sm cursor-pointer" onClick={handleLogout}>Logout</div>
                     </div>
                 </div>}
             </div>

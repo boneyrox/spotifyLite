@@ -16,9 +16,12 @@ module.exports = {
         'F9FAFB': '#F9FAFB',
       },
       fontFamily: {
-         'Inter': ['Inter', 'sans-serif'],
+        'Inter': ['Inter', 'sans-serif'],
+      },
+      animation: {
+        'Ping': 'ping 0.3s cubic-bezier(0, 0, 0.2, 1)'
       }
-  
+
     },
   },
   plugins: [],

@@ -1,18 +1,19 @@
 import React, { useEffect } from 'react';
 import '../css/PlayerSection.scss';
-import {FaRegHeart} from 'react-icons/fa';
-import {HiOutlineViewList} from 'react-icons/hi';
-import {AiOutlineDesktop} from 'react-icons/ai';
-import {BsVolumeUp} from 'react-icons/bs';
-import {BsFillPlayCircleFill} from 'react-icons/bs';
-import {BsChevronLeft} from 'react-icons/bs';
-import {BsChevronRight} from 'react-icons/bs';
+import { FaHeart } from 'react-icons/fa';
+import { HiOutlineViewList } from 'react-icons/hi';
+import { AiOutlineDesktop } from 'react-icons/ai';
+import { BsVolumeUp } from 'react-icons/bs';
+import { BsFillPlayCircleFill } from 'react-icons/bs';
+import { BsChevronLeft } from 'react-icons/bs';
+import { BsChevronRight } from 'react-icons/bs';
 
 const PlayerSection = () => {
+    const [color, setColor] = React.useState(false);
     useEffect(() => {
-        let url =  localStorage.getItem('img');
+        let url = localStorage.getItem('img');
         console.log(url);
-        
+
     }, [])
     return (
         <div className='player-wrapper flex items-center justify-between px-9'>
@@ -22,11 +23,11 @@ const PlayerSection = () => {
                     <div className='song-name pb-1'>Im My Feelings</div>
                     <div className='artist-name'>Drake</div>
                 </div>
-                <div className='favourite-icon pl-3.5'><FaRegHeart /></div>
+                <div className='favourite-icon pl-3.5'><FaHeart onClick={() => setColor(!color)} className={`${color ? 'animate-Ping  text-green-600 ' : ' text-gray-300 '} cursor-pointer`} /></div>
             </div>
             <div className='player-controler flex'>
                 <div className='list-icon pl-6'><BsChevronLeft /></div>
-                <div className='list-icon pl-6'><BsFillPlayCircleFill /></div>
+                <div className='list-icon pl-6 text-lg'><BsFillPlayCircleFill /></div>
                 <div className='list-icon pl-6'><BsChevronRight /></div>
             </div>
             <div className='player-volume flex'>

@@ -3,6 +3,7 @@ import { FaHome, FaSearch, FaSubway, FaPlusCircle, FaHeart, FaDownload, FaBars }
 import '../css/Sidebar.scss';
 const Sidebar = () => {
     const [menuBarVisibility, setMenuBarVisibility] = useState(false);
+
     return (
         <>
             <div className={`sidebar z-10 max-w-240 w-screen flex flex-col justify-between md:block md:px-4 px-8 absolute ${menuBarVisibility ? 'block menu-effect' : 'hidden'}`}>
@@ -14,19 +15,19 @@ const Sidebar = () => {
                         <FaHome />
                         <div className='pl-3'>Home</div>
                     </div>
-                    <div className='search icon-wrapper'>
+                    <div className={`search  hover icon-wrapper `}>
                         <FaSearch />
                         <div className='pl-3'>Search</div>
                     </div>
-                    <div className='library icon-wrapper'>
+                    <div className='library  hover icon-wrapper'>
                         <FaSubway />
                         <div className='pl-3'>Your Library</div>
                     </div>
-                    <div className='playlist icon-wrapper'>
+                    <div className='playlist  hover icon-wrapper'>
                         <FaPlusCircle />
                         <div className='pl-3'>Create Playlist</div>
                     </div>
-                    <div className='likedSong icon-wrapper'>
+                    <div className='likedSong  hover icon-wrapper'>
                         <FaHeart />
                         <div className='pl-3' >Liked Songs</div>
                     </div>
@@ -34,7 +35,7 @@ const Sidebar = () => {
                         Welcome to premium
                     </div>
                 </div>
-                <div className='bottom-section flex px-4 py-3.5 items-center cursor-pointer'>
+                <div className='bottom-section hover  flex px-4 py-3.5 items-center cursor-pointer'>
                     <FaDownload />
                     <div className='pl-3'>Install App</div>
                 </div>

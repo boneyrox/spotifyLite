@@ -8,7 +8,7 @@
     height: inherit;
 }
 
-@media only screen and (min-width: 768px)  {
+@media only screen and (min-width: 768px) {
     .sidebar {
         position: unset;
         height: auto;
@@ -26,4 +26,11 @@
 
 .menu-effect {
     transition: width 1s ease;
+}
+
+.hover:hover {
+    cursor: pointer;
+    background-color: white;
+    color: #10B981;
+    border-radius: 8px;
 }

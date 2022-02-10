@@ -5,7 +5,7 @@ import PlayerSection from './PlayerSection'
 import useFetch from './useFetch';
 import '../css/Home.scss';
 const url = '/me';
-const Home = ({ token }) => {
+const Home = ({ token, resetToken }) => {
     const { loading, data } = useFetch(url, token);
 
     if (loading) return <h1>Loading</h1>
@@ -14,7 +14,7 @@ const Home = ({ token }) => {
         <div className='home h-screen'>
             <div className='upper-section flex h-89 w-screen'>
                 <Sidebar />
-                <MainContent data={data} token={token} />
+                <MainContent data={data} token={token} resetToken={resetToken} />
             </div>
             <PlayerSection />
         </div >
