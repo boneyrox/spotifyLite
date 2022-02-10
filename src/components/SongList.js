@@ -3,8 +3,9 @@ import SongCard from "./SongCard";
 import '../css/SongList.scss';
 import { Carousel } from '@trendyol-js/react-carousel';
 
-export default function SongList({ loading, heading, data}) {
+export default function SongList({ loading, heading, data }) {
 
+    // render a list of songs
     if (loading) return <div>Loading...</div>
 
     return (
@@ -15,10 +16,10 @@ export default function SongList({ loading, heading, data}) {
 
             {!loading ? (<Carousel show={8} slide={2} swiping={true}>
                 {data.map((item, index) => {
-                    const  {album, image, title} = item;
+                    const { album, image, title } = item;
                     console.log();
                     return (
-                        <SongCard key={index} album={album} image={image} title={title}/>
+                        <SongCard key={index} album={album} image={image} title={title} />
                     )
                 })}
             </Carousel>) : null}

@@ -1,5 +1,5 @@
-import React,{useState} from 'react'
-import { FaHome, FaSearch, FaSubway, FaPlusCircle, FaHeart, FaDownload, FaBars} from 'react-icons/fa';
+import React, { useState } from 'react'
+import { FaHome, FaSearch, FaSubway, FaPlusCircle, FaHeart, FaDownload, FaBars } from 'react-icons/fa';
 import '../css/Sidebar.scss';
 const Sidebar = () => {
     const [menuBarVisibility, setMenuBarVisibility] = useState(false);
@@ -38,8 +38,11 @@ const Sidebar = () => {
                     <FaDownload />
                     <div className='pl-3'>Install App</div>
                 </div>
+                <div className='  m-2 text-gray-800 text-sm text-center bg-gradient-to-r from-green-200 via-green-300 to-blue-500 rounded-md p-1 '>
+                    <p >Made with 💛 <a target='_blank' href='https://github.com/boneyrox' className='font-bold'  >Boneyy</a></p>
+                </div>
             </div>
-            <div className='mobile-view md:hidden block  p-5 cursor-pointer z-40 absolute' onClick={()=>{
+            <div className='mobile-view md:hidden block  p-5 cursor-pointer z-40 absolute' onClick={() => {
                 setMenuBarVisibility(!menuBarVisibility);
             }}>
                 <FaBars />

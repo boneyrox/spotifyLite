@@ -1,14 +1,15 @@
 import React from 'react'
-import { FaAngleDown} from 'react-icons/fa';
+import { FaAngleDown } from 'react-icons/fa';
 import '../css/MainContent.scss'
 import RecentlyPlayed from './RecentlyPlayed'
 import Cookies from 'js-cookie'
 import NewRelease from './NewRelease';
 
-const MainContent = ({ data, token}) => {
+const MainContent = ({ data, token }) => {
     const [dropDown, setDropDown] = React.useState(false);
+    const defaultAvatar = 'https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png'
 
-    const handleLogout = ()=>{
+    const handleLogout = () => {
         // remove cookie and get new token
         Cookies.remove('spotifyAuthToken');
         window.location.reload();
@@ -16,11 +17,11 @@ const MainContent = ({ data, token}) => {
 
     // console.log(data.images[0].url);
     return (
-        <div className="main-content w-screen ml-0 md:ml-16 overflow-y-scroll">
+        <div className="main-content w-screen ml-0 md:ml-2 overflow-y-scroll">
             <div className='flex justify-between m-4'>
                 <div className='slider-arrow'></div>
-                <div className='avatar-wrapper flex bg-gray-200 items-center cursor-pointer'>
-                    <img className="inline-block md:h-12 md:w-12 h-8 w-8 rounded-full ring-2 ring-white" src={data.images[0].url} alt="" />
+                <div className='avatar-wrapper  flex bg-gray-200 items-center cursor-pointer'>
+                    <img className="inline-block  md:h-12 md:w-12 h-8 w-8 rounded-full ring-2 ring-white" src={data.images[0]?.url || defaultAvatar} alt="" />
                     <div className='px-2 truncate w-24'>{data.display_name}</div>
                     <div onClick={() => {
                         setDropDown(!dropDown)

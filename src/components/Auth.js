@@ -14,10 +14,10 @@ const Auth = () => {
             ) : (
                 // Display the login page
                 <SpotifyAuth className="auth"
-                    redirectUri={`http://localhost:3000` || 'https://awesome-hodgkin-ddc4a6.netlify.app/'}
-                    clientID='761c538089074f8d806178d2045e7d21'
+                    redirectUri={`http://localhost:3000`}
+                    clientID='8727f35b55f04a62b8d39810d41192dd'
                     scopes={[Scopes.userReadPrivate, 'user-read-email', 'user-read-recently-played']} // either style will work
-                    onAccessToken={(token) => setToken(token)}   
+                    onAccessToken={(token) => setToken(token)}
                 />
             )
             }
